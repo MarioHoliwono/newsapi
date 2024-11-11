@@ -27,8 +27,7 @@ class Article {
     title: json["title"] ?? "",
     description: json["description"] ?? "",
     url: json["url"] ?? "",
-    urlToImage: json["urlToImage"] ??
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg",
+    urlToImage: json["urlToImage"] ?? "",
     publishedAt: DateTime.parse(json["publishedAt"]),
     content: json["content"] ?? "",
   );

@@ -1,10 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../data/model/Article.dart';
 
 class NewsCard extends StatelessWidget {
   final Article article;
 
-  const NewsCard({Key? key, required this.article}) : super(key: key);
+  const NewsCard({Key? key, required this.article}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,30 +18,35 @@ class NewsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(article.urlToImage),
-            const SizedBox(height: 8.0),
+            SizedBox(height: 8.0),
             Text(
-              article.title ?? 'No Title',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
+                article.title,
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
+                )
             ),
             SizedBox(height: 8.0),
             Text(
-              article.description ?? 'No Description',
+              article.description,
               style: TextStyle(fontSize: 14.0),
             ),
             SizedBox(height: 8.0),
             Text(
               'Published At: ${article.publishedAt}',
-              style: TextStyle(fontSize: 12.0, color: Colors.grey),
+              style: TextStyle(
+                  fontSize: 12.0,
+                  color: Colors.grey
+              ),
             ),
-            SizedBox(height: 8.0),
             Text(
-              'Source: ${article.source.name ?? 'Unknown'}',
-              style: TextStyle(fontSize: 12.0, color: Colors.grey),
+              'Source: ${article.source.name}',
+              style: TextStyle(
+                  fontSize: 12.0,
+                  color: Colors.grey
+              ),
             ),
-            SizedBox(height: 8.0),
+
           ],
         ),
       ),
